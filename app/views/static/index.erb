@@ -1,21 +1,33 @@
+<h1 id="main_header">THE URL Shortener</h1>
 
-<h1>URL Shortener</h1>
-<p>Enter your url below to shorten it.</p>
+<div id="input_form">
+	<p>Enter your url below to shorten it.</p>
+	<form id= class="url_input_form" action= "/urls" method= "post">
+		Enter URL:
+		<input type= "text" name="url[long]">
+		<input type= "submit" value= "Submit">
+	</form>
+	<% if @current_url%>
+		<%= "Errors found: seems that your url passed in is invalid" if @current_url.errors.messages%>
+		<br><br>
+		<%= "Raw errors messages:" if @current_url.errors.messages%>
+		<br>
+		<%= @current_url.errors.messages if @current_url.errors.messages%>
+	<%end%>
+</div>
 
-<form action= "/urls" method= "post">
-	Enter URL:
-	<input type= "text" name="url[long]">
-	<input type= "submit" value= "Submit">
-</form>
-
-<h3><u><font size="5">URL list</font></u></h3>
-<table border= "5">
-	<th>Long Url</th>
-	<th>Short Url</th>
-	<% @urls.each do |url| %>
-		<tr>
-			<td><a href="<%= url.long_url %>"> <%= url.long_url %></a></td>				
-			<td><a href= "<%= url.long_url %>">  <%= request.host%>:9393/<%= url.short_url %></a></td>
-		</tr>
-	<% end %>
-</table>
+<div id="urls_block" style="clear:both">
+	<h3><u><font id="urls_table_title" size="5">URL list</font></u></h3>
+	<table id="urls_table">
+		<th>Long Url</th>
+		<th>Short Url</th>
+		<th>Clicks Count</th>
+		<% @urls.each do |url| %>
+			<tr>
+				<td><a href="<%= url.long_url %>"> <%= url.long_url %></a></td>
+				<td><a href= "<%= request.host%>:9393/<%= url.short_url %>">  <%= request.host%>:9393/<%= url.short_url %></a></td>
+				<td><%= url.click_count %></td>
+			</tr>
+		<% end %>
+	</table>
+</div>

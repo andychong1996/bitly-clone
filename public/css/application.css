@@ -1,0 +1,39 @@
+body {
+    font-family: 'Droid Sans', serif;
+    text-align: center;
+    background-color: #43238f;
+}
+
+h1{
+    float: left;
+}
+
+#input_form{
+  float: right;
+}
+
+
+table.url_table {
+  width: 100%;
+  border-collapse: collapse;
+}
+/* Zebra striping */
+tr:nth-of-type(odd) {
+  background: #ab3a3a;
+}
+th {
+  background: #333;
+  color: yellow ;
+  font-size: 20px;
+  font-weight: bold;
+}
+td, th {
+  padding: 3px;
+
+  text-align: left;
+  text-align: center;
+}
+
+#error_message {
+
+}
