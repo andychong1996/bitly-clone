@@ -1,39 +1,83 @@
 body {
     font-family: 'Droid Sans', serif;
-    text-align: center;
-    background-color: #43238f;
+
 }
 
-h1{
-    float: left;
+#icon_and_name{
+  margin: 20px auto;
+  width: 100%;
+}
+
+#header_icon{
+  margin: auto;
+}
+
+
+#name{
+  margin: 0 auto;
+  width: 100%;
+  padding-top: 45px;
+  padding-left: 10px;
+  color: rgb(91, 8, 102);
 }
 
 #input_form{
-  float: right;
+  margin: 0 auto;
+  padding-top: 50px;
 }
 
+#form_input{
+  width: 200px;
+  height: 40px;
+  font-size: 22px;
+  border-radius: 10px;
 
-table.url_table {
-  width: 100%;
-  border-collapse: collapse;
 }
-/* Zebra striping */
-tr:nth-of-type(odd) {
-  background: #ab3a3a;
-}
-th {
-  background: #333;
-  color: yellow ;
-  font-size: 20px;
-  font-weight: bold;
-}
-td, th {
-  padding: 3px;
 
-  text-align: left;
+#submit_button{
+  background: #620ec1;
+  border-radius: 7px;
+  font-family: Arial;
+  color: #ffffff;
+  font-size: 22px;
+  width: 100px;
+  height: 50px;
+  text-decoration: none;
+  margin-left: -5px;
+
+}
+#submit_button:hover{
+  background: #9349e7;
+
+}
+
+#urls_block{
+margin: 0 auto;
+padding-top: 150px;
+}
+
+#table_header{
+  margin: 0 auto;
   text-align: center;
 }
 
-#error_message {
+#urls_table{
+margin: 20px auto;
+}
 
+th{
+  background: #333;
+  color: white;
+  font-size: 20px;
+  font-weight: bold;
+  text-align: center;
+}
+
+td{
+  padding: 3px;
+  text-align: left;
+}
+
+#click_count_col{
+  text-align: center;
 }
