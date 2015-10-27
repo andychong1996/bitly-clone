@@ -2,42 +2,40 @@
 
 		<div id="icon_and_name">
 			<img id="header_icon" src="/img/nav img/nav bar.png" alt="nav bar icon" />
-			<p id="name">URL Cut</p>
+			<p id="name">Cut URL</p>
 		</div>
 
 		<div id="input_form">
 			<form id="url_input_form" action= "/urls" method= "post">
-				<input id="form_input"type= "text" name="url[long]" placeholder="Enter URL Here">
+					<input id="form_input" type= "url" name="url[long_url]" placeholder="Enter URL Here to Shorten" required>
 				<input id="submit_button" type= "submit" value= "Submit">
+				<span id="reminder">Please check whether your link include http/https before submit!</span>
 			</form>
 		</div>
 
-			<div class="error_message">
-				<% if @current_url%>
-					<%= "Errors found: seems that your url passed in is invalid" if @current_url.errors.messages%>
-					<br>
-					<br>
-					<%= "Raw errors messages:" if @current_url.errors.messages%>
-					<br>
-					<%= @current_url.errors.messages if @current_url.errors.messages%>
-				<%end%>
+			<div id="error_message">
+
 			</div>
 
 </div>
 
 
 <div id="urls_block" style="clear:both">
-	<h1 id="table_header">URL LIST</h1>
+	<h1 id="table_title"><button id="table_title_button">URL LIST</button></h1>
 	<table id="urls_table">
-		<th>Long Url</th>
-		<th>Short Url</th>
-		<th>Clicks Count</th>
-		<% @urls.each do |url| %>
-			<tr>
-				<td><a href="<%= url.long_url %>"> <%= url.long_url %></a></td>
-				<td><a href= "<%= request.host%>:9393/<%= url.short_url %>">  <%= request.host%>:9393/<%= url.short_url %></a></td>
-				<td id="click_count_col"><%= url.click_count %></td>
-			</tr>
-		<% end %>
+		<thead>
+			<th>Long Url</th>
+			<th>Short Url</th>
+			<th>Clicks Count</th>
+		</thead>
+		<tbody>
+			<% @urls.each do |url| %>
+				<tr id="table_row">
+					<td><a href="<%= url.long_url %>"> <%= url.long_url %></a></td>
+					<td><a href= "<%= request.host%>:9393/<%= url.short_url %>">  <%= request.host%>:9393/<%= url.short_url %></a></td>
+					<td id="click_count_col"><%= url.click_count %></td>
+				</tr>
+			<% end %>
+		</tbody>
 	</table>
 </div>

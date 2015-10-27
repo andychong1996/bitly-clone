@@ -15,6 +15,8 @@ body {
 
 #name{
   margin: 0 auto;
+  font-size: 100px;
+  font-weight: bolder;
   width: 100%;
   padding-top: 45px;
   padding-left: 10px;
@@ -27,10 +29,11 @@ body {
 }
 
 #form_input{
-  width: 200px;
+  width: 300px;
   height: 40px;
   font-size: 22px;
   border-radius: 10px;
+  text-align: center;
 
 }
 
@@ -44,11 +47,11 @@ body {
   height: 50px;
   text-decoration: none;
   margin-left: -5px;
-
+  opacity: 0.9;
 }
-#submit_button:hover{
-  background: #9349e7;
 
+#error_message{
+  color: red;
 }
 
 #urls_block{
@@ -56,9 +59,12 @@ margin: 0 auto;
 padding-top: 150px;
 }
 
-#table_header{
+#table_title_button{
   margin: 0 auto;
-  text-align: center;
+  color: #620ec1;
+  width: auto;
+  font-size: 50px;
+  border-radius: 5%;
 }
 
 #urls_table{
