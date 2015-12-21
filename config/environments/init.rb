@@ -43,6 +43,8 @@ require APP_ROOT.join('config', 'database')
 # Setup views (V)
 set :views, File.join(APP_ROOT, "app", "views")
 
+#Setup public folder
+set :public_folder, File.join(APP_ROOT, "public")
 # Setup helper (H)
 Dir[APP_ROOT.join('app', 'helpers', '*.rb')].each { |file| require file }
 
